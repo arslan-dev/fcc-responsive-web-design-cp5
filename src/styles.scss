@@ -1,0 +1,121 @@
+$md: 768px;
+$xl: 1200px;
+
+:root {
+  --white-color: #f0f0f0;
+  --accent-color: #be3144;
+  --neutral-dark-color: #303841;
+  --neutral-blue-color: #45567d;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: var(--white-color);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+#navbar {
+  position: fixed;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  width: 100%;
+  padding: 1em;
+  font-family: Poppins, sans-serif;
+
+  @media screen and (min-width: $md) { font-size: 1.5rem; }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2em;
+    justify-content: flex-end;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome-section {
+  height: 100vh;
+  background: linear-gradient(90deg, #35373a, #1c1c1e);
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    white-space: nowrap;
+
+    @media screen and (min-width: $md) { font-size: 5rem; }
+    @media screen and (min-width: $xl) { font-size: 6rem; }
+  }
+
+  p {
+    font-size: 2rem;
+    font-family: Poppins, sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--accent-color);
+    white-space: nowrap;
+
+    @media screen and (min-width: $xl) { font-size: 3rem }
+  }
+}
+
+#projects {
+  /* min-height: 100vh; */
+  background-color: var(--neutral-blue-color);
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media screen and (min-width: $md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media screen and (min-width: $xl) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.project-tile {
+  width: 100%;
+  height: 100%;
+  background-color: var(--neutral-dark-color);
+
+  a {
+    text-decoration: none;
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  p {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    padding: 1em;
+    text-align: center;
+
+    @media screen and (min-width: $xl) { font-size: 1.5rem; }
+  }
+}
