@@ -77,18 +77,35 @@ section {
 }
 
 #projects {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   background-color: var(--neutral-blue-color);
   padding: 4rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
 
-  @media screen and (min-width: $md) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  h2 {
+    font-size: 2rem;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.1em 0.5em;
+    border-bottom: 1px solid var(--white-color);
+    margin-bottom: 1.2em;
+    white-space: nowrap;
+
+    @media screen and (min-width: $md) { font-size: 3.1rem }
+    @media screen and (min-width: $xl) { font-size: 4.2rem }
   }
-  @media screen and (min-width: $xl) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  .projects-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media screen and (min-width: $md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media screen and (min-width: $xl) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 }
 
