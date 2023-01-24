@@ -4,6 +4,7 @@ $xl: 1200px;
 :root {
   --white-color: #f0f0f0;
   --accent-color: #be3144;
+  --accent-color-2: #ff7f50;
   --neutral-dark-color: #303841;
   --neutral-blue-color: #45567d;
 }
@@ -117,6 +118,12 @@ section {
   a {
     text-decoration: none;
     display: block;
+
+    &:hover {
+      p span::before, p span::after {
+        opacity: 1;
+      }
+    }
   }
 
   img {
@@ -134,5 +141,13 @@ section {
     text-align: center;
 
     @media screen and (min-width: $xl) { font-size: 1.5rem; }
+
+    span::before { content: "< "; }
+    span::after { content: " />"; }
+    span::before, span::after {
+      color: var(--accent-color-2);
+      transition: opacity 0.3s linear;
+      opacity: 0;
+    }
   }
 }
