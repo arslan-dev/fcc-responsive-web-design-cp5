@@ -1,6 +1,17 @@
 $md: 768px;
 $xl: 1200px;
 
+@mixin paragraph {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  text-align: center;
+
+  @media screen and (min-width: $xl) { font-size: 1.5rem; }
+}
+
 :root {
   --white-color: #f0f0f0;
   --accent-color: #be3144;
@@ -9,7 +20,7 @@ $xl: 1200px;
   --neutral-blue-color: #45567d;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -108,6 +119,23 @@ section {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+
+  #btn-show-all {
+    background-color: var(--neutral-dark-color);
+
+    @include paragraph();
+    padding: 0.5em 1em;
+    margin-top: 3em;
+    border-radius: 0.1em;
+
+    transition: background-color 0.3s linear;
+    i { transition: transform 0.3s ease-in-out; }
+
+    &:hover {
+      background-color: var(--accent-color);
+      i { transform: translateX(0.1em); }
+    }
+  }
 }
 
 .project-tile {
@@ -132,15 +160,8 @@ section {
   }
 
   p {
-    font-family: Poppins, sans-serif;
-    font-weight: 400;
-    text-align: center;
-    font-size: 1.3rem;
-    white-space: nowrap;
+    @include paragraph();
     padding: 1em;
-    text-align: center;
-
-    @media screen and (min-width: $xl) { font-size: 1.5rem; }
 
     span::before { content: "< "; }
     span::after { content: " />"; }
