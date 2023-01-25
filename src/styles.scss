@@ -207,13 +207,12 @@ section {
     text-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.5);
 
     a {
+      display: block;
       transition: transform 0.3s ease-in-out;
       position: relative;
 
       &:hover {
-        // transform: translateY(1em);
-        color: red;
-        transform: rotate(30deg);
+        transform: translateY(0.5em);
       }
     }
   }
