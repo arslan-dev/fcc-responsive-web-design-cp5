@@ -1,13 +1,12 @@
 $md: 768px;
 $xl: 1200px;
 
-@mixin paragraph {
+.paragraph {
   font-family: Poppins, sans-serif;
   font-weight: 400;
   text-align: center;
   font-size: 2rem;
   white-space: nowrap;
-  text-align: center;
 }
 
 :root {
@@ -118,7 +117,6 @@ section {
   #btn-show-all {
     background-color: var(--neutral-dark-color);
 
-    @include paragraph();
     padding: 0.5em 1em;
     margin-top: 3em;
     border-radius: 0.1em;
@@ -155,7 +153,6 @@ section {
   }
 
   p {
-    @include paragraph();
     padding: 1em;
 
     span::before { content: "< "; }
@@ -170,7 +167,7 @@ section {
 
 #contacts {
   text-align: center;
-  height: 100vh;
+  height: 80vh;
   background-color: var(--neutral-dark-color);
   align-items: stretch;
 
@@ -209,11 +206,33 @@ section {
     a {
       display: block;
       transition: transform 0.3s ease-in-out;
-      position: relative;
 
       &:hover {
         transform: translateY(0.5em);
       }
     }
   }
+}
+
+footer {
+  --border-width: 0.5em;
+
+  height: calc(20vh - var(--border-width));
+  background-color: var(--neutral-dark-color);
+  border-top: var(--border-width) solid var(--accent-color);
+
+  display: flex;
+  justify-content: flex-end;
+  align-content: stretch;
+
+  p {
+    padding: 2em;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:first-of-type { margin-right: auto; }
+  }
+
 }
