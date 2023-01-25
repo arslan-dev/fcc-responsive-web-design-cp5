@@ -4,9 +4,8 @@ $xl: 1200px;
 .paragraph {
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  text-align: center;
   font-size: 2rem;
-  white-space: nowrap;
+  // white-space: nowrap;
 }
 
 :root {
@@ -45,14 +44,23 @@ a {
   font-size: 2rem;
   background-color: var(--accent-color);
   width: 100%;
-  padding: 1em;
   font-family: Poppins, sans-serif;
+  padding: 0 1em;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
 
   ul {
     list-style-type: none;
     display: flex;
-    gap: 2em;
     justify-content: flex-end;
+  }
+  
+  a {
+    display: block;
+    padding: 1em;
+
+    &:hover {
+      background-color: var(--neutral-blue-color);
+    }
   }
 }
 
@@ -225,7 +233,7 @@ footer {
   justify-content: flex-end;
   align-content: stretch;
 
-  p {
+  div {
     padding: 2em;
 
     display: flex;
