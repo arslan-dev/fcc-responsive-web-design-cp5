@@ -172,3 +172,64 @@ section {
     }
   }
 }
+
+#contacts {
+  text-align: center;
+  height: 100vh;
+  background-color: var(--neutral-dark-color);
+  align-items: stretch;
+
+  h2 {
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+
+    @media screen and (min-width: $md) { font-size: 4rem }
+    @media screen and (min-width: $xl) { font-size: 6rem }
+  }
+
+  p {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 0.2em;
+
+    @media screen and (min-width: $md) { font-size: 1.2rem }
+    @media screen and (min-width: $xl) { font-size: 1.4rem }
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+
+    margin-top: 2em;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    white-space: nowrap;
+
+    @media screen and (min-width: $md) {
+      flex-direction: row;
+      font-size: 1.4rem;
+    }
+    @media screen and (min-width: $xl) { font-size: 2.0rem; }
+
+    text-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.5);
+
+    a {
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+
+      &:hover {
+        // transform: translateY(1em);
+        color: red;
+        transform: rotate(30deg);
+      }
+    }
+  }
+}
