@@ -162,6 +162,7 @@ section {
 
   p {
     padding: 1em;
+    text-align: center;
 
     span::before { content: "< "; }
     span::after { content: " />"; }
